@@ -6,12 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
 
 #for paperclip/image testing purposes
-@file = Rack::Test::UploadedFile.new(Rails.root + 'westernwall.jpg', 'image/jpg')
+@amy = Rack::Test::UploadedFile.new(Rails.root + 'amy.jpg', 'image/jpg')
+Picture.create!(image: @amy)
 
-Picture.create!(image: @file)
+# https://s3.amazonaws.com/mygallery/large/2/westernwall.jpg
+# ^this will be the path I use, with different image names at the very end
 
 # User.destroy_all
 
-# user = User.create!(name: 'amy goldberg', username: 'amygoldberg', password: 'goldberg', email: 'amykgoldberg@gmail.com')
+user_one = User.create!(name: 'amy goldberg', username: 'amygoldberg', password: 'goldberg', email: 'amykgoldberg@gmail.com')
+user_one.pictures.create!(image: @amy)
+
+
