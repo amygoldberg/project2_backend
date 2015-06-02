@@ -15,6 +15,8 @@ def show
 end
 
 #POST /users
+#test in curl or postman
+#create = new
 def create
   @user = User.new(user_params)
   if @user.save
@@ -25,6 +27,8 @@ def create
 end
 
 #PATCH /users/:id
+#test in curl or postman
+#update = edit
 def update
   @user = User.find(params[:id])
   if @user.update(user_params)
