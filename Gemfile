@@ -47,4 +47,5 @@ gem "paperclip", "~> 4.2"
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'aws-sdk', '< 2.0'
 gem 'active_model_serializers'
+gem 'rack-cors', :require => 'rack/cors'
 
