@@ -39,6 +39,10 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    aws-s3 (0.6.3)
+      builder
+      mime-types
+      xml-simple
     aws-sdk (1.64.0)
       aws-sdk-v1 (= 1.64.0)
     aws-sdk-v1 (1.64.0)
@@ -157,12 +161,14 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   active_model_serializers
+  aws-s3
   aws-sdk (< 2.0)
   bcrypt (~> 3.1.7)
   byebug

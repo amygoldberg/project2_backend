@@ -3,7 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 # FIXME: using this to be able to move forward with cross script
 
-  protect_from_forgery with: :exception
+  # Remove the root element, curly braces surrounding the JSON.
+  def default_serializer_options
+    {
+      root: false
+    }
+  end
+
+  # protect_from_forgery with: :exception
 
   skip_before_action :verify_authenticity_token, if: :json_request?
   force_ssl if: :ssl_configured?
