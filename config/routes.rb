@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   # resources :pictures
 
+  post '/login' => 'auth#login'
+  post '/register' => 'auth#register'
+
   resources :users do
     resources :pictures
   end

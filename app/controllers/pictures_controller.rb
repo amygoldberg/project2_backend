@@ -1,4 +1,4 @@
-class PicturesController < ApplicationController
+class PicturesController < ApiController
 
   before_action :set_user
 
@@ -29,7 +29,8 @@ class PicturesController < ApplicationController
   def set_user
     #debugging, replace with current user
     # @user = User.find(1)
-    @user = User.find(params[:user_id])
+    #    @user = User.find(params[:user_id])
+    current_user
   end
 
   def picture_params
