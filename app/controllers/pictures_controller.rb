@@ -4,19 +4,20 @@ class PicturesController < ApiController
 
   #GET /users/:user_id/pictures
   def index
-    @pictures = @user.pictures
+    @pictures = current_user.pictures
     render json: @pictures
   end
 
   #GET /users/:user_id/pictures/:id
   def show
-    @picture = @user.pictures.find(params[:id])
+    @picture = current_user.pictures.find(params[:id])
     render json: @picture
+
   end
 
   #POST /users/:user_id/pictures
   def create
-    @picture = @user.pictures.build(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     if @picture.save
       render json: @picture, status: :created
     else
