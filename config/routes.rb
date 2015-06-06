@@ -11,9 +11,8 @@ Rails.application.routes.draw do
   post '/register' => 'auth#register'
   delete '/logout' => 'auth#logout'
 
-  resources :users do
-    resources :pictures
-  end
+  # resources :users
+  resources :pictures
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

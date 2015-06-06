@@ -1,4 +1,5 @@
-class AuthController < ApplicationController
+class AuthController < ApiController
+  skip_before_action :authenticate, only: [:login, :register]
 
   def login
     credentials = login_params
