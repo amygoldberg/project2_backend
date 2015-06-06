@@ -10,6 +10,11 @@ class AuthController < ApplicationController
     end
   end
 
+  def logout
+    current_user.logout
+    head :no_content
+  end
+
   def register
     if User.create(create_new_params
        .merge(password_confirmation: nil)).valid?

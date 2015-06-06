@@ -1,21 +1,23 @@
 class PicturesController < ApiController
-
+  skip_before_action :authenticate
   before_action :set_user
 
   #GET /users/:user_id/pictures
   def index
-    @pictures = @user.pictures
+    @pictures = current_user.pictures
     render json: @pictures
   end
 
   #GET /users/:user_id/pictures/:id
   def show
-    @picture = @user.pictures.find(params[:id])
+    @picture = current_user.pictures.find(params[:id])
     render json: @picture
+
   end
 
   #POST /users/:user_id/pictures
   def create
+    @user = User.find(params[:user_id])
     @picture = @user.pictures.build(picture_params)
     if @picture.save
       render json: @picture, status: :created
