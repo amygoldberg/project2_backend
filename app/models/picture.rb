@@ -1,7 +1,7 @@
 class Picture < ActiveRecord::Base
   belongs_to :user
   has_attached_file :image,
-              :styles => { :large => "510x510#", :medium => "250x250#" },
+              :styles => { :large => "510x510#", :medium => "250x250#", :small  => "150x150>", :thumb => "100x100#"},
               :processors => [:thumbnail],
               storage: :s3,
               path: "/:style/:id/:filename",
