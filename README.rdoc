@@ -1,28 +1,47 @@
-== README
+# Full Stack App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Objectives
+- Create first full stack application, connecting Ruby backend and Javascript frontend
+- Use Heroku to host the application
+- Create wireframes and user stories (stored in the frontend folder)
+- Create two git repos, commit project at various times to respective repos
+- Backend includes table/migration/database, gemfile, routes, models, controllers, serializers, seeded information
 
-Things you may want to cover:
+## Instructions
 
-* Ruby version
+1. Login to user account, or create a new account if a first time user
+2. Upload images to your gallery within your account
 
-* System dependencies
+## Overview
 
-* Configuration
+I was tasked with creating a functional full stack application, allowing a user to log in (with authentication). Once logged in, a user can upload images to their account and view all existing images.
 
-* Database creation
+## Step 1: Create a database
 
-* Database initialization
+- Start my backend by creating a database with two models: Users and Pictures
 
-* How to run the test suite
+- Establish relationship between two models and create controller files (with actions) for each
 
-* Services (job queues, cache servers, search engines, etc.)
+## Step 2: Install paperclip gem (and other information)
 
-* Deployment instructions
+- Paperclip tutorial to be able to implement photo upload abilities
 
-* ...
+## Step 3: See user and photo data for testing
+
+- Test routes in the browser --> render all seeded users, render user photos
+
+- Create serializers to establish relationship between models, and allow what is shown in the browser
+
+## Step 4: Create controllers for authentication purposes
+
+- Create api and auth controllers with information for the login and logout process (connected to frontend code)
+
+## Step 5: Test code to ensure it can connect to frontend code
+
+- When working on the frontend/javascript files, continue testing code to ensure front and back end are connecting
+  - ex: if a user can be created in the frontend, test the user was saved in the backend database
+
+## Step 6: Deploy application to be hosted on Heroku
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
