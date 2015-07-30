@@ -9,12 +9,12 @@
 User.destroy_all
 
 #for paperclip/image testing purposes
-@amy = Rack::Test::UploadedFile.new(Rails.root + 'amy.jpg', 'image/jpg')
-Picture.create!(image: @amy)
-@amy_two = Rack::Test::UploadedFile.new(Rails.root + 'amy_2.jpg', 'image/jpg')
-Picture.create!(image: @amy_two)
-@amy_three = Rack::Test::UploadedFile.new(Rails.root + 'amy_3.jpg', 'image/jpg')
-Picture.create!(image: @amy_three)
+# @amy = Rack::Test::UploadedFile.new(Rails.root + 'amy.jpg', 'image/jpg')
+# Picture.create!(image: @amy)
+# @amy_two = Rack::Test::UploadedFile.new(Rails.root + 'amy_2.jpg', 'image/jpg')
+# Picture.create!(image: @amy_two)
+# @amy_three = Rack::Test::UploadedFile.new(Rails.root + 'amy_3.jpg', 'image/jpg')
+# Picture.create!(image: @amy_three)
 
 # @ashleigh = Rack::Test::UploadedFile.new(Rails.root + 'ashleigh.jpg', 'image/jpg')
 # Picture.create!(image: @ashleigh)
